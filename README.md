@@ -11,5 +11,9 @@
 # 补充
 1. 端口冲突，修改端口：fastapi_main.py 中 uvicorn.run("fastapi_main:app", host='0.0.0.0', port=8000, reload=False), 调整 port 即可
 
+2. 自行生成数据库：删除旧的数据 culture_sqlite.db， culture/core.py 指定仓库路径即可 root_path = None
+
+3. 数据库配置：culture/database.py
+
 
 
