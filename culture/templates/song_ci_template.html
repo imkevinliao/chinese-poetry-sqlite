@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SongCi Results</title>
+</head>
+<body>
+<!--    <h1>Search Results for: "{{ word }}"</h1>-->
+
+    {% if items %}
+        <ul>
+        {% for item in items %}
+            <li>
+                <h3>{{ item.rhythmic }}</h3>
+                <h6>{{ item.author }}</h6>
+                <p>{{ item.paragraphs }}</p>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found for "{{ word }}".</p>
+    {% endif %}
+
+    <!-- 分页控件 -->
+    <div>
+        <p>Page {{ current_page }} of {{ total_pages }}</p>
+        {% if current_page > 1 %}
+            <a href="/culture/SongCi/{{ word }}/?page={{ current_page - 1 }}">Previous</a>
+        {% endif %}
+
+        {% if current_page < total_pages %}
+            <a href="/culture/SongCi/{{ word }}/?page={{ current_page + 1 }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>
