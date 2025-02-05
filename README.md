@@ -15,6 +15,8 @@
 2. 自行生成数据库：删除旧的数据 culture_sqlite.db， culture/core.py 指定仓库路径即可 root_path = None
 
 3. 数据库配置：culture/database.py
+
+4. 数据源：https://github.com/chinese-poetry/chinese-poetry  已在子模块中 third-repository/chinese-poetry
 # 寄语
 
 很早就做过了，一开始是裸写 sql 语句，到后来用 sqlalchmy orm，再到现在使用 fastapi 构建。
