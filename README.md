@@ -9,6 +9,7 @@
 
 运行:python fastapi_main.py
 
+补充（ubuntu）部署 Python3.12 及 pip3.12 参考：https://github.com/imkevinliao/UbuntuDocs/blob/master/markdown/python.md
 # 高级
 1. 端口冲突，修改端口：fastapi_main.py 中 uvicorn.run("fastapi_main:app", host='0.0.0.0', port=8000, reload=False), 调整 port 即可
 
