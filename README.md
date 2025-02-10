@@ -5,7 +5,7 @@
 # 部署&运行
 环境准备：Python Verion = 3.12
 
-安装必要库：pip install -r requirement.txt
+安装必要库：pip install -r requirements.txt
 
 运行:python fastapi_main.py
 
