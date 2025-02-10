@@ -12,7 +12,7 @@ from .dump2sqlite import fill_sqlite
 from .models import *
 from .schemas import ReadSongCi, ReadQuanTangShi
 
-# 配置 json 文件夹路径 ./third-repository/chinese-poetry
+# 配置 json 文件夹路径 "./third-repository/chinese-poetry"
 root_path = None
 
 

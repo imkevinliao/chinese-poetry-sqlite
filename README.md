@@ -11,18 +11,15 @@
 
 补充（ubuntu）部署 Python3.12 及 pip3.12 参考：https://github.com/imkevinliao/UbuntuDocs/blob/master/markdown/python.md
 # 高级
-1. 端口冲突，修改端口：fastapi_main.py 中 uvicorn.run("fastapi_main:app", host='0.0.0.0', port=8000, reload=False), 调整 port 即可
+1. 端口冲突，修改端口：fastapi_main.py 中 修改 port 为其他端口
+2. 准备数据：获取子仓库数据：git submodule init && git submodule update
+3. 配置数据源：culture/core.py  root_path = None 修改为注释值即可，生成后记得置None
+4. 数据库配置：culture/database.py
+5. 数据源：https://github.com/chinese-poetry/chinese-poetry  已在子模块中 third-repository/chinese-poetry
+6. 本地测试:uvicorn fastapi_main:app --host 127.0.0.1 --port 8000 --reload
 
-2. 自行生成数据库：删除旧的数据 culture_sqlite.db， culture/core.py 指定仓库路径即可 root_path = None
-
-3. 数据库配置：culture/database.py
-
-4. 数据源：https://github.com/chinese-poetry/chinese-poetry  已在子模块中 third-repository/chinese-poetry
 # 寄语
-
 很早就做过了，一开始是裸写 sql 语句，到后来用 sqlalchmy orm，再到现在使用 fastapi 构建。
 
 人生的路，不知道哪一天就串起来了。
-
-体验（服务器到期则失效）：http://38.147.170.202:8000/
 
