@@ -11,7 +11,7 @@
 
 安装必要库：`pip install -r requirements.txt`
 
-直接下载sqlite数据（放置在仓库下）：curl -L https://github.com/imkevinliao/chinese-poetry-sqlite/releases/download/v1.0/culture_sqlite.db -o ./culture_sqlite.db
+直接下载sqlite数据（放置在仓库下）：`curl -L https://github.com/imkevinliao/chinese-poetry-sqlite/releases/download/v1.0/culture_sqlite.db -o ./culture_sqlite.db`
 
 运行:python fastapi_main.py
 
