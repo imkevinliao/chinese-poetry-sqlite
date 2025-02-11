@@ -5,6 +5,8 @@
 # 部署&运行
 环境准备：Python Verion = 3.12
 
+新建一个空文件夹（进入空文件夹）
+
 克隆仓库：git clone https://github.com/imkevinliao/chinese-poetry-sqlite.git .
 
 安装必要库：pip install -r requirements.txt
