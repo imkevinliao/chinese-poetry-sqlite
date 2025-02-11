@@ -23,3 +23,8 @@
 
 人生的路，不知道哪一天就串起来了。
 
+# Docker 一键体验
+
+docker run -d -p 8000:8000 --name culture kevinstarry/culture
+
+http://tencent.25527123.xyz:7703/
