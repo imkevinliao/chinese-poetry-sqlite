@@ -35,7 +35,7 @@
 docker 伟大无需多言
 
 ```
-docker run -d -p 8000:8000 --name culture kevinstarry/culture
+docker run -d --restart=always -p 8000:8000 --name culture kevinstarry/culture 
 ```
 
 http://tencent.25527123.xyz:7703/
