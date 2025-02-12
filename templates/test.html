@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中华诗词文化</title>
+</head>
+<body>
+  <h1>欢迎来到中华诗词文化的世界</h1>
+  <p>当前访问 URL: {{ url }}</p>
+
+  <form id="search-form">
+    <select id="search-type">
+      <option value="SongCi">宋词</option>
+      <option value="QuanTangShi">唐诗</option>
+    </select>
+    <input type="text" id="search-keywords" placeholder="请输入关键词，用%分隔">
+    <button type="submit">搜索</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('search-form');
+    const keywordsInput = document.getElementById('search-keywords');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const keywords = keywordsInput.value;
+      const searchType = document.getElementById('search-type').value;
+      const url = "{{ url }}culture/" + searchType + "/" + keywords;
+
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
