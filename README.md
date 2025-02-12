@@ -1,7 +1,16 @@
 # 中华诗词文化
-千年文化传承 ×
+为了千年文化传承（宏大目标） ×
 
-不过是个喜欢读读诗词的平凡人 √
+闲来读读诗词的俗人（微小叙事） √
+
+万物皆可 docker，一条命令直接部署：（访问 http://yourip:8080)
+
+```
+docker run -d --restart=always -p 8000:8000 --name culture kevinstarry/culture 
+```
+
+体验：http://tencent.25527123.xyz:7703/
+
 # 部署&运行
 环境准备：Python Verion = 3.12
 
@@ -24,18 +33,7 @@
 5. 数据源：https://github.com/chinese-poetry/chinese-poetry  已在子模块中 third-repository/chinese-poetry
 6. 本地测试:uvicorn fastapi_main:app --host 127.0.0.1 --port 8000 --reload
 
+# 尾声
+诗词文化 + Docker + Python + FastApi + Sqlite + HTML = ?
 
-
-# 寄语
-很早就做过了，一开始是裸写 sql 语句，到后来用 sqlalchmy orm，再到现在使用 fastapi 构建。
-
-人生的路，不知道哪一天就串起来了。
-
-# Docker 一键体验
-docker 伟大无需多言
-
-```
-docker run -d --restart=always -p 8000:8000 --name culture kevinstarry/culture 
-```
-
-http://tencent.25527123.xyz:7703/
+你只管感动自己，剩下的也不必在意
