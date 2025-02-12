@@ -4,34 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SongCi Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            padding: 40px; /* Increased padding */
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px; /* Add top margin */
+            margin-bottom: 40px; /* Add bottom margin */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px; /* Increased margin */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 20px;
+            padding: 15px; /* Increased padding */
+            background-color: #fafafa;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li p {
+            margin: 8px 0; /* Increased margin */
+            text-align: justify;
+        }
+
+        .pagination {
+            text-align: center;
+            margin-top: 40px; /* Increased margin */
+        }
+
+        .pagination a {
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 10px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .pagination a:hover {
+            background-color: #0056b3;
+        }
+
+        .no-results {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-top: 30px; /* Added margin for no results message */
+        }
+    </style>
 </head>
 <body>
-<!--    <h1>Search Results for: "{{ word }}"</h1>-->
+    <div class="container">
+        <h1>Search Results for: "{{ word }}"</h1>
 
-    {% if items %}
-        <ul>
-        {% for item in items %}
-            <li>
-                <h3>{{ item.title }}</h3>
-                <h6>{{ item.author }}</h6>
-                <p>{{ item.paragraphs }}</p>
-            </li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No results found for "{{ word }}".</p>
-    {% endif %}
-
-    <!-- 分页控件 -->
-    <div>
-        <p>Page {{ current_page }} of {{ total_pages }}</p>
-        {% if current_page > 1 %}
-            <a href="/culture/SongCi/{{ word }}/?page={{ current_page - 1 }}">Previous</a>
+        {% if items %}
+            <ul>
+            {% for item in items %}
+                <li>
+                    <p><strong>标题:</strong> {{ item.title }}</p>
+                    <p><strong>作者:</strong> {{ item.author }}</p>
+                    <p><strong></strong> {{ item.paragraphs }}</p>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-results">No results found for "{{ word }}".</p>
         {% endif %}
 
-        {% if current_page < total_pages %}
-            <a href="/culture/SongCi/{{ word }}/?page={{ current_page + 1 }}">Next</a>
-        {% endif %}
+        <div class="pagination">
+          <p>Page {{ current_page }} of {{ total_pages }}</p>
+          {% if current_page > 1 %}
+              <a href="/culture/SongCi/{{ word }}/?page={{ current_page - 1 }}">Previous</a>
+          {% endif %}
+
+          {% if current_page < total_pages %}
+              <a href="/culture/SongCi/{{ word }}/?page={{ current_page + 1 }}">Next</a>
+          {% endif %}
+      </div>
     </div>
 </body>
 </html>
