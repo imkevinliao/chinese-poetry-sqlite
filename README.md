@@ -3,12 +3,12 @@
 
 闲来读读诗词的俗人（微小叙事） √
 
-万物皆可 docker，一条命令直接部署：（访问 yourip:8080 )，预览：http://tencent.25527123.xyz:12003/
+万物皆可 docker，一条命令直接部署：
 
 ```
 docker run -d --restart=always -p 8000:8000 --name culture kevinstarry/culture 
 ```
-# 部署&运行
+# 开发参考
 环境准备：Python Verion = 3.12
 
 新建一个空文件夹（进入空文件夹）
@@ -31,6 +31,4 @@ docker run -d --restart=always -p 8000:8000 --name culture kevinstarry/culture
 6. 本地测试:uvicorn fastapi_main:app --host 127.0.0.1 --port 8000 --reload
 
 # 尾声
-诗词文化 + Docker + Python + FastApi + Sqlite + HTML = ?
-
-你只管感动自己，剩下的也不必在意
+喜欢诗词的庸人
